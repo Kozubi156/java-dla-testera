@@ -12,7 +12,7 @@ public class MainApp {
         if (sumAB % 2 == 0 && sumDC % 2 == 0) {
             System.out.println("Wszystkie liczby są parzyste");
         } else {
-            System.out.println("Liczby nie są jest parzyste");
+            System.out.println("Nie wszystkie liczby są parzyste");
         }
     }
 }
