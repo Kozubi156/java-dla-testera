@@ -1,23 +1,23 @@
 public class Bug {
 
     String bugDescription;
-    String bugReporter;
+    String email;
     int priority;
     boolean isActive;
 
-    Bug(String bugDescription,String bugReporter,int priority,boolean isActive){
+    Bug(String bugDescription, String email, int priority, boolean isActive){
         this.bugDescription = bugDescription;
-        this.bugReporter = bugReporter;
+        this.email = email;
         this.priority = priority;
         this.isActive = isActive;
     }
 
     void showBugDetails(){
-        System.out.println(bugDescription +" "+bugReporter+" "+priority+" "+isActive);
+        System.out.println(bugDescription +" "+ email +" "+priority+" "+isActive);
     }
 
     void showReporter(){
-        System.out.println("Bug reported by: "+bugReporter);
+        System.out.println("Bug reported by: "+ email);
     }
 
     void showStatus(){
