@@ -4,6 +4,7 @@ public class MainApp {
         User user1 = new User("Janusz","Kowal","kowal@gmail.com",17);
         user1.showAllUserInformation();
         user1.greetings(user1.firstName);
+        user1.greetings("Paweł","Testowy");
 
 
         Bug bug1 = new Bug("Page doesn't work", "pawel@gmail.com", 5);
