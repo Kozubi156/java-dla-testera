@@ -17,6 +17,10 @@ public class User {
         System.out.println(firstName+" "+lastName+", email: "+email+", ma lat: "+age+", czy jest dorosły: "+isAdult);
     }
 
+    int getUserAge(){
+        return age;
+    }
+
     boolean isAdult(){
         if(age>=18){
             return true;

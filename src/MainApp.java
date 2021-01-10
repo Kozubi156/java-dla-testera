@@ -7,7 +7,6 @@ public class MainApp {
 
 
         Bug bug1 = new Bug("Page doesn't work", "pawel@gmail.com", 5);
-
         bug1.showBugDetails();
         bug1.showBugReporterEmail();
         bug1.showBugStatus();
