@@ -1,12 +1,17 @@
 public class MainApp {
     public static void main(String[] args) {
 
-        Bug bug = new Bug("Page doesn't work", "pawel@gmail.com", 5);
+        User user1 = new User("Janusz","Kowal","kowal@gmail.com",17);
+        user1.showAllUserInformation();
+        user1.greetings(user1.firstName);
 
-        bug.showBugDetails();
-        bug.showBugReporterEmail();
-        bug.showBugStatus();
-        int piority = bug.getBugPiority();
+
+        Bug bug1 = new Bug("Page doesn't work", "pawel@gmail.com", 5);
+
+        bug1.showBugDetails();
+        bug1.showBugReporterEmail();
+        bug1.showBugStatus();
+        int piority = bug1.getBugPiority();
         System.out.println(piority);
 
     }
