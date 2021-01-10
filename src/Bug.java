@@ -16,15 +16,15 @@ public class Bug {
         System.out.println(bugDescription +" "+ email +" "+priority+" "+isActive);
     }
 
-    void showReporter(){
-        System.out.println("Bug reported by: "+ email);
+    void showBugReporterEmail(){
+        System.out.println("Bug reported email: "+ email);
     }
 
-    void showStatus(){
+    void showBugStatus(){
         System.out.println("Is bug active: "+isActive);
     }
 
-    int getPiority(){
+    int getBugPiority(){
         return priority;
     }
 

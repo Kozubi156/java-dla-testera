@@ -4,9 +4,9 @@ public class MainApp {
         Bug bug = new Bug("Page doesn't work", "pawel@gmail.com", 5, true);
 
         bug.showBugDetails();
-        bug.showReporter();
-        bug.showStatus();
-        int piority = bug.getPiority();
+        bug.showBugReporterEmail();
+        bug.showBugStatus();
+        int piority = bug.getBugPiority();
         System.out.println(piority);
 
     }
