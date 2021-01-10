@@ -5,11 +5,11 @@ public class Bug {
     int priority;
     boolean isActive;
 
-    Bug(String bugDescription, String email, int priority, boolean isActive){
+    Bug(String bugDescription, String email, int priority){
         this.bugDescription = bugDescription;
         this.email = email;
         this.priority = priority;
-        this.isActive = isActive;
+        this.isActive = true;
     }
 
     void showBugDetails(){
