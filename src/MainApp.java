@@ -1,19 +1,13 @@
+import model.User;
+
 public class MainApp {
     public static void main(String[] args) {
 
-        User user1 = new User("Janusz","Kowal","kowal@gmail.com",17);
-        user1.showAllUserInformation();
-        user1.greetings(user1.firstName);
-        user1.greetings("Paweł","Testowy");
+        User user = new User("Jan", "Testowy", "jantestowy@gmail.com", 16);
 
-
-        Bug bug1 = new Bug("Page doesn't work", "pawel@gmail.com", 5);
-        bug1.showBugDetails();
-        bug1.showBugReporterEmail();
-        bug1.showBugStatus();
-        int piority = bug1.getBugPiority();
-        System.out.println(piority);
-
+        System.out.println(user.getEmail());
+        user.setEmail("nowyemail@gmail.com");
+        System.out.println(user.getEmail());
     }
 }
 
