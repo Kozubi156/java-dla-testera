@@ -7,7 +7,7 @@ public class Bug {
     private int priority;
     private boolean isActive;
 
-    public Bug(String bugDescription, String email, int priority){
+    public Bug(String bugDescription, String email, int priority) {
         this.bugDescription = bugDescription;
         this.email = email;
         this.priority = priority;
@@ -19,7 +19,9 @@ public class Bug {
     }
 
     public void setBugDescription(String bugDescription) {
-        this.bugDescription = bugDescription;
+        if (bugDescription.length() < 10){
+            System.out.println("Bug description should contains not less than 10 characters");
+        } else {this.bugDescription = bugDescription;}
     }
 
     public String getEmail() {
@@ -27,7 +29,12 @@ public class Bug {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (!email.contains("@")) {
+            System.out.println("Wrong email address. Email address should contains @");
+        } else {
+            this.email = email;
+        }
+
     }
 
     public int getPriority() {
@@ -35,7 +42,11 @@ public class Bug {
     }
 
     public void setPriority(int priority) {
-        this.priority = priority;
+        if (priority >= 1 && priority <= 5) {
+            this.priority = priority;
+        } else {
+            System.out.println("Wrong bug piority. Set bug piority from range 1 to 6");
+        }
     }
 
     public boolean isActive() {
@@ -46,16 +57,16 @@ public class Bug {
         isActive = active;
     }
 
-    public void showBugDetails(){
-        System.out.println(bugDescription +" "+ email +" "+priority+" "+isActive);
+    public void showBugDetails() {
+        System.out.println(bugDescription + " " + email + " " + priority + " " + isActive);
     }
 
-    public void showBugReporterEmail(){
-        System.out.println("model.Bug reported email: "+ email);
+    public void showBugReporterEmail() {
+        System.out.println("model.Bug reported email: " + email);
     }
 
-    public void showBugStatus(){
-        System.out.println("Is bug active: "+isActive);
+    public void showBugStatus() {
+        System.out.println("Is bug active: " + isActive);
     }
 
 
