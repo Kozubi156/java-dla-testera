@@ -8,7 +8,7 @@ public class MainApp {
         System.out.println(bug.getEmail());
         bug.setBugDescription("assfsfdsffsfddfsdfsddf");
         System.out.println(bug.getBugDescription());
-        bug.setPriority(0);
+        bug.setPriority(1);
 
     }
 }
