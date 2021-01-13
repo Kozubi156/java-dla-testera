@@ -5,29 +5,22 @@ public class MainApp {
     public static void main(String[] args) {
 
 
-        int[] numbers = {1, 2, 3, 4, 5};
+        int[] numbers = {2, 2, 3, 4, 5, 7, 7, 7, 8, 8, 2};
 
-//        1st resolution
-//        int firstIndex = numbers[0];
-//        int lastIndex = numbers[numbers.length-1];
-//        numbers[0] = lastIndex;
-//        numbers[numbers.length-1] = firstIndex;
-
-//        2nd resolution
-//        int firstIndex = numbers[0];
-//        numbers[0] = numbers[numbers.length-1];
-//        numbers[numbers.length-1] = firstIndex;
-
-        //3rd resolution
-        numbers[numbers.length-1] = numbers[numbers.length-1] + numbers[0];
-        numbers[0] = numbers[numbers.length-1] -  numbers[0];
-        numbers[numbers.length-1] = numbers[numbers.length-1] - numbers[0];
-
-
+        int even = 0;
+        int odd = 0;
 
         for (int number : numbers) {
-            System.out.println(number);
+            if (number % 2 == 0) {
+                even += 1;
+            } else {
+                odd += 1;
+            }
         }
+
+        System.out.println("Ilosc liczb parzystych: "+even);
+        System.out.println("Ilosc liczb nieparzystych: "+odd);
+
 
     }
 }
