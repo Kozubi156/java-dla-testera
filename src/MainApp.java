@@ -4,12 +4,30 @@ import model.User;
 public class MainApp {
     public static void main(String[] args) {
 
-        Bug bug = new Bug("Page is doesn't load", "tester1@gmail.com", 5);
-        bug.setEmail("nowyemail@.pl");
-        System.out.println(bug.getEmail());
-        bug.setBugDescription("assfsfdf");
-        System.out.println(bug.getBugDescription());
-        bug.setPriority(0);
+
+        int[] numbers = {1, 2, 3, 4, 5};
+
+//        1st resolution
+//        int firstIndex = numbers[0];
+//        int lastIndex = numbers[numbers.length-1];
+//        numbers[0] = lastIndex;
+//        numbers[numbers.length-1] = firstIndex;
+
+//        2nd resolution
+//        int firstIndex = numbers[0];
+//        numbers[0] = numbers[numbers.length-1];
+//        numbers[numbers.length-1] = firstIndex;
+
+        //3rd resolution
+        numbers[numbers.length-1] = numbers[numbers.length-1] + numbers[0];
+        numbers[0] = numbers[numbers.length-1] -  numbers[0];
+        numbers[numbers.length-1] = numbers[numbers.length-1] - numbers[0];
+
+
+
+        for (int number : numbers) {
+            System.out.println(number);
+        }
 
     }
 }
