@@ -19,9 +19,11 @@ public class Bug {
     }
 
     public void setBugDescription(String bugDescription) {
-        if (bugDescription.length() < 10){
+        if (bugDescription.length() < 10) {
             System.out.println("Bug description should contains not less than 10 characters");
-        } else {this.bugDescription = bugDescription;}
+        } else {
+            this.bugDescription = bugDescription;
+        }
     }
 
     public String getEmail() {
@@ -41,11 +43,25 @@ public class Bug {
         return priority;
     }
 
+//    public void setPriority(int priority) {
+//        if (priority >= 1 && priority <= 5) {
+//            this.priority = priority;
+//        } else {
+//            System.out.println("Wrong bug piority. Set bug piority from range 1 to 6");
+//        }
+//    }
+
     public void setPriority(int priority) {
-        if (priority >= 1 && priority <= 5) {
-            this.priority = priority;
-        } else {
-            System.out.println("Wrong bug piority. Set bug piority from range 1 to 6");
+        switch (priority) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                this.priority = priority;
+                break;
+            default:
+                System.out.println("Wrong bug piority. Set bug piority from range 1 to 6");
         }
     }
 
