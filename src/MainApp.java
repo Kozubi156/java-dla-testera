@@ -1,5 +1,6 @@
 import model.Bug;
 import model.User;
+import utils.StringUtils;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -10,10 +11,7 @@ public class MainApp {
         User user4 = new User("Paweł","Robak","robal@gmail.com",80);
         User user5 = new User("Paweł","Robak","robal@gmail.com",80);
 
-        User.printUserCounter();
-
-        int userCounter = User.getUserCounter();
-        System.out.println(userCounter);
+        System.out.println(StringUtils.getFormattedText("sfdfjdhfdkjhdfjdkdsjkdsfs"));
 
     }
 }
