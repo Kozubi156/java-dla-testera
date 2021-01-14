@@ -4,12 +4,16 @@ import model.User;
 public class MainApp {
     public static void main(String[] args) {
 
-        Bug bug = new Bug("Page is doesn't load", "tester1@gmail.com", 5);
-        bug.setEmail("nowyemail@.pl");
-        System.out.println(bug.getEmail());
-        bug.setBugDescription("assfsfdf");
-        System.out.println(bug.getBugDescription());
-        bug.setPriority(0);
+        User user1 = new User("Paweł","Robak","robal@gmail.com",80);
+        User user2 = new User("Paweł","Robak","robal@gmail.com",80);
+        User user3 = new User("Paweł","Robak","robal@gmail.com",80);
+        User user4 = new User("Paweł","Robak","robal@gmail.com",80);
+        User user5 = new User("Paweł","Robak","robal@gmail.com",80);
+
+        User.printUserCounter();
+
+        int userCounter = User.getUserCounter();
+        System.out.println(userCounter);
 
     }
 }

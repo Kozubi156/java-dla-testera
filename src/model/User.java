@@ -1,6 +1,9 @@
 package model;
 
 public class User {
+
+    private static int userCounter = 0;
+
     private String firstName;
     private String lastName;
     private String email;
@@ -13,6 +16,7 @@ public class User {
         this.email = email;
         this.age = age;
         this.isAdult = isAdult();
+        userCounter++;
     }
 
     public String getFirstName() {
@@ -73,5 +77,13 @@ public class User {
 
     public void greetings(String firstName,String lastName, int age){
         System.out.println("Hi "+firstName+" "+lastName);
+    }
+
+    public static void printUserCounter(){
+        System.out.println(userCounter);
+    }
+
+    public static int getUserCounter(){
+        return userCounter;
     }
 }
