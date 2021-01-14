@@ -11,7 +11,7 @@ public class MainApp {
         for(int i = 0;i<numbers.length;i++ ){
             min = numbers[i];
             for(int j = i+1;j<numbers.length;j++){
-                if(numbers[j] < min){
+                if(numbers[j] > min){
                     min = numbers[j];
                     numbers[j] = numbers[i];
                     numbers[i] = min;
