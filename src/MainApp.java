@@ -1,23 +1,16 @@
-import model.Bug;
-import model.User;
-import utils.StringUtils;
-import utils.WeekUtils;
-
-import java.util.Map;
+import computer.Laptop;
+import computer.PC;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        User user1 = new User("Paweł", "Robak", "robal@gmail.com", 80);
-        User user2 = new User("Paweł", "Robak", "robal@gmail.com", 80);
-        User user3 = new User("Paweł", "Robak", "robal@gmail.com", 80);
-        User user4 = new User("Paweł", "Robak", "robal@gmail.com", 80);
-        User user5 = new User("Paweł", "Robak", "robal@gmail.com", 80);
+        PC officeComputer = new PC("Office computer","HP",500,128);
+        Laptop gamingLaptop = new Laptop("XGames","HP GAMES",500,256,50);
 
-        System.out.println(StringUtils.getFormattedText("sfdfjdhfdkjhdfjdkdsjkdsfs"));
+        gamingLaptop.setBatteryLevel(0);
 
-        System.out.println(WeekUtils.MONDAY);
-
+        gamingLaptop.switchOn();
+        System.out.println(gamingLaptop.isTurnOn());
 
     }
 }
