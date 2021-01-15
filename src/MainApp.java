@@ -19,9 +19,9 @@ public class MainApp {
 //        numbers[numbers.length-1] = firstIndex;
 
         //3rd resolution
-        numbers[numbers.length-1] = numbers[numbers.length-1] + numbers[0];
-        numbers[0] = numbers[numbers.length-1] -  numbers[0];
-        numbers[numbers.length-1] = numbers[numbers.length-1] - numbers[0];
+        numbers[numbers.length-1] = numbers[numbers.length-1] + numbers[0]; //6
+        numbers[0] = numbers[numbers.length-1] -  numbers[0]; //5
+        numbers[numbers.length-1] = numbers[numbers.length-1] - numbers[0];//1
 
 
 
