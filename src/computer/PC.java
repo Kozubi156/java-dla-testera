@@ -2,17 +2,25 @@ package computer;
 
 public class PC extends Computer {
 
-    public PC(String name, String type, int hdd, int ram) {
+    private boolean isConnectedToPowerSupply;
+
+    public PC(String name, String type, int hdd, int ram, boolean isConnectedToPowerSupply) {
         super(name, type, hdd, ram);
+        this.isConnectedToPowerSupply = isConnectedToPowerSupply;
     }
 
-    public void showComputerName(){
+    public void showComputerName() {
         System.out.println(name);
     }
 
     @Override
     public void switchOn() {
         System.out.println("Checking power supply");
-        super.switchOn();
+        if (isConnectedToPowerSupply) {
+            super.switchOn();
+        } else {
+            System.out.println("Counputer is not connected to power suply");
+        }
     }
+
 }
