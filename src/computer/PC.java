@@ -19,8 +19,12 @@ public class PC extends Computer {
         if (isConnectedToPowerSupply) {
             super.switchOn();
         } else {
-            System.out.println("Counputer is not connected to power suply");
+            System.out.println("Coumputer is not connected to power suply");
         }
+    }
+
+    public void setPowerSupply(boolean powerSupplyAttached) {
+        isConnectedToPowerSupply = powerSupplyAttached;
     }
 
 }
