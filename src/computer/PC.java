@@ -17,6 +17,11 @@ public class PC extends Computer {
         return volumeLevel += 1;
     }
 
+    @Override
+    public int volumeUp(int volume) {
+        return 0;
+    }
+
 
     @Override
     public int volumeDown() {
@@ -26,6 +31,11 @@ public class PC extends Computer {
         } else {
             return volumeLevel;
         }
+    }
+
+    @Override
+    public int volumeDown(int volume) {
+        return 0;
     }
 
 

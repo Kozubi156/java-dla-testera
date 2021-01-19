@@ -13,6 +13,11 @@ public class Laptop extends Computer {
         return volumeLevel += 5;
     }
 
+    @Override
+    public int volumeUp(int volume) {
+        return 0;
+    }
+
 
     @Override
     public int volumeDown() {
@@ -22,6 +27,11 @@ public class Laptop extends Computer {
         } else {
             return volumeLevel;
         }
+    }
+
+    @Override
+    public int volumeDown(int volume) {
+        return 0;
     }
 
 

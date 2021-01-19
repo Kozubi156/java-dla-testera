@@ -10,8 +10,7 @@ abstract public class Computer {
     protected int volumeLevel;
 
 
-
-    public Computer(String name, String type, int hdd, int ram ) {
+    public Computer(String name, String type, int hdd, int ram) {
         this.name = name;
         this.type = type;
         this.hdd = hdd;
@@ -68,39 +67,18 @@ abstract public class Computer {
 
 
     public void switchOff() {
-        System.out.println("Wyłczam komputer: "+ name);
+        System.out.println("Wyłczam komputer: " + name);
         isTurnOn = false;
     }
 
     public abstract int volumeUp();
 
-    public int volumeUp(int volume) {
-        if (volume > 0 && volume <= 100) {
-            volumeLevel = volumeLevel + volume;
-            if (volumeLevel >= 100) {
-                volumeLevel = 100;
-            }
-            return volumeLevel;
-        } else {
-            System.out.println("Wrong number, inputed value should be from range 0-100");
-        }
-        return volumeLevel;
-    }
+
+    public abstract int volumeUp(int volume);
 
     public abstract int volumeDown();
 
-    public int volumeDown(int volume) {
-        if (volume > 0 && volume <= 100) {
-            volumeLevel = volumeLevel - volume;
-            if (volumeLevel >= 100) {
-                volumeLevel = 100;
-            }
-            return volumeLevel;
-        } else {
-            System.out.println("Wrong number, inputed value should be from range 0-100");
-        }
-        return volumeLevel;
-    }
+    public abstract int volumeDown(int volume);
 
     public boolean isTurnOn() {
         return isTurnOn;
