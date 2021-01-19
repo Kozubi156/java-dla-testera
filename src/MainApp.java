@@ -1,19 +1,49 @@
+import computer.Computer;
 import computer.Laptop;
 import computer.PC;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        PC officeComputer = new PC("Office computer","HP",500,128,true);
-        Laptop gamingLaptop = new Laptop("XGames","HP GAMES",500,256,50);
+        Computer officeComputer = new PC("Office computer 1","HP",500,128,true);
+        Computer gamingLaptop = new Laptop("XGames","HP GAMES",500,256,50);
 
-//        gamingLaptop.setBatteryLevel(0);
-//        gamingLaptop.switchOn();
-//        System.out.println(gamingLaptop.isTurnOn());
 
-        officeComputer.setPowerSupply(false);
-        officeComputer.switchOn();
-        System.out.println(officeComputer.isTurnOn());
+//        System.out.println(gamingLaptop.volumeUp());
+//        System.out.println(gamingLaptop.volumeDown());
+//        System.out.println(gamingLaptop.volumeDown());
+//        System.out.println(gamingLaptop.volumeDown());
+//        System.out.println(gamingLaptop.volumeDown());
+//        System.out.println(gamingLaptop.volumeDown());
+//
+//        System.out.println("----------------------------------------");
+//
+
+
+
+        gamingLaptop.volumeUp(-10);
+        System.out.println(gamingLaptop.getVolumeLevel());
+
+        gamingLaptop.volumeUp(30);
+        System.out.println(gamingLaptop.getVolumeLevel());
+
+        gamingLaptop.volumeUp(5);
+        System.out.println(gamingLaptop.getVolumeLevel());
+
+        gamingLaptop.volumeUp(9);
+        System.out.println(gamingLaptop.getVolumeLevel());
+
+        gamingLaptop.volumeUp(101);
+        System.out.println(gamingLaptop.getVolumeLevel());
+
+        gamingLaptop.volumeDown(120);
+        gamingLaptop.volumeDown(30);
+        System.out.println(gamingLaptop.getVolumeLevel());
+
+
+
+
+
 
     }
 }
