@@ -74,11 +74,33 @@ abstract public class Computer {
 
     public abstract int volumeUp();
 
-    public abstract int volumeUp(int volume);
+    public int volumeUp(int volume) {
+        if (volume > 0 && volume <= 100) {
+            volumeLevel = volumeLevel + volume;
+            if (volumeLevel >= 100) {
+                volumeLevel = 100;
+            }
+            return volumeLevel;
+        } else {
+            System.out.println("Wrong number, inputed value should be from range 0-100");
+        }
+        return volumeLevel;
+    }
 
     public abstract int volumeDown();
 
-    public abstract int volumeDown(int volume);
+    public int volumeDown(int volume) {
+        if (volume > 0 && volume <= 100) {
+            volumeLevel = volumeLevel - volume;
+            if (volumeLevel >= 100) {
+                volumeLevel = 100;
+            }
+            return volumeLevel;
+        } else {
+            System.out.println("Wrong number, inputed value should be from range 0-100");
+        }
+        return volumeLevel;
+    }
 
     public boolean isTurnOn() {
         return isTurnOn;

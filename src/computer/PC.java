@@ -17,42 +17,17 @@ public class PC extends Computer {
         return volumeLevel += 1;
     }
 
-    @Override
-    public int volumeUp(int volume) {
-        if (volume > 0 && volume <= 100) {
-            volumeLevel = volumeLevel + volume;
-            if (volumeLevel >= 100) {
-                volumeLevel = 100;
-            }
-            return volumeLevel;
-        } else {
-            System.out.println("Wrong number, inputed value should be from range 0-100");
-        }
-        return volumeLevel;
-    }
 
     @Override
     public int volumeDown() {
-        if(volumeLevel <= 0){
-            return 0;
+        volumeLevel -= 2;
+        if (volumeLevel <= 0) {
+            return volumeLevel = 0;
         } else {
-            return volumeLevel -=1;
+            return volumeLevel;
         }
     }
 
-    @Override
-    public int volumeDown(int volume) {
-        if (volume > 0 && volume <= 100) {
-            volumeLevel = volumeLevel - volume;
-            if (volumeLevel >= 100) {
-                volumeLevel = 100;
-            }
-            return volumeLevel;
-        } else {
-            System.out.println("Wrong number, inputed value should be from range 0-100");
-        }
-        return volumeLevel;
-    }
 
     @Override
     public void switchOn() {
