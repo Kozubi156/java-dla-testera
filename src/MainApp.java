@@ -9,40 +9,16 @@ public class MainApp {
         Computer gamingLaptop = new Laptop("XGames","HP GAMES",500,256,50);
 
 
-//        System.out.println(gamingLaptop.volumeUp());
-//        System.out.println(gamingLaptop.volumeDown());
-//        System.out.println(gamingLaptop.volumeDown());
-//        System.out.println(gamingLaptop.volumeDown());
-//        System.out.println(gamingLaptop.volumeDown());
-//        System.out.println(gamingLaptop.volumeDown());
-//
-//        System.out.println("----------------------------------------");
-//
 
-
-
-        gamingLaptop.volumeUp(-10);
+        gamingLaptop.volumeUp(50);
+        gamingLaptop.volumeUp(100);
+        gamingLaptop.volumeUp(100);
         System.out.println(gamingLaptop.getVolumeLevel());
 
-        gamingLaptop.volumeUp(30);
-        System.out.println(gamingLaptop.getVolumeLevel());
-
-        gamingLaptop.volumeUp(5);
-        System.out.println(gamingLaptop.getVolumeLevel());
-
-        gamingLaptop.volumeUp(9);
-        System.out.println(gamingLaptop.getVolumeLevel());
-
-        gamingLaptop.volumeUp(101);
-        System.out.println(gamingLaptop.getVolumeLevel());
-
-        gamingLaptop.volumeDown(120);
-        gamingLaptop.volumeDown(30);
-        System.out.println(gamingLaptop.getVolumeLevel());
-
-
-
-
+        gamingLaptop.volumeDown(20);
+        gamingLaptop.volumeDown(20);
+        gamingLaptop.volumeDown(200);
+        gamingLaptop.volumeDown(200);
 
 
     }

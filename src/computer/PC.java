@@ -13,30 +13,60 @@ public class PC extends Computer {
         System.out.println(name);
     }
 
-    public int volumeUp(){
-        return volumeLevel += 1;
+    public int volumeUp() {
+        if (volumeLevel >= 100) {
+            volumeLevel = 100;
+            System.out.println("Max volume level 100 reached");
+        } else {
+            volumeLevel += 5;
+        }
+        return volumeLevel;
     }
 
     @Override
     public int volumeUp(int volume) {
-        return 0;
+        if(volume > 0 && volume <= 100) {
+            if (volumeLevel >= 100) {
+                volumeLevel = 100;
+                System.out.println("Max volume level 100 reached");
+            } else {
+                volumeLevel += volume;
+            }
+        } else {
+            System.out.println("Wrong number, you can enter number form range 1-100");
+        }
+        return volumeLevel;
     }
 
 
     @Override
     public int volumeDown() {
-        volumeLevel -= 2;
         if (volumeLevel <= 0) {
-            return volumeLevel = 0;
+            volumeLevel = 0;
+            System.out.println("Volume level 0 reached");
         } else {
-            return volumeLevel;
+            volumeLevel -= 10;
         }
+        return volumeLevel;
     }
 
     @Override
     public int volumeDown(int volume) {
-        return 0;
+        if (volume > 0 && volume <= 100) {
+            if (volumeLevel <= 0) {
+                volumeLevel = 0;
+                System.out.println("Volume level 0 reached");
+            } else {
+                volumeLevel -= volume;
+            }
+        } else {
+            System.out.println("Wrong number, you can enter number form range 1-100");
+        }
+        return volumeLevel;
     }
+
+
+
 
 
     @Override
