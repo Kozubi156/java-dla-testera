@@ -24,7 +24,7 @@ public class PC extends Computer {
 
     @Override
     public int volumeUp(int newVolumeLevel) {
-        if(newVolumeLevel > 0) {
+        if (newVolumeLevel > 0) {
             volumeLevel += newVolumeLevel;
             if (volumeLevel >= 100) {
                 volumeLevel = 100;
@@ -49,7 +49,7 @@ public class PC extends Computer {
 
     @Override
     public int volumeDown(int volumeValue) {
-        if(volumeValue > 0) {
+        if (volumeValue > 0) {
             volumeLevel -= volumeValue;
             if (volumeLevel >= 100) {
                 volumeLevel = 100;
@@ -60,9 +60,6 @@ public class PC extends Computer {
         }
         return volumeLevel;
     }
-
-
-
 
 
     @Override
@@ -77,7 +74,7 @@ public class PC extends Computer {
 
     @Override
     public void switchOff() {
-        System.out.println("Wyłczam PC: "+ name);
+        System.out.println("Wyłczam PC: " + name);
         isTurnOn = false;
     }
 
