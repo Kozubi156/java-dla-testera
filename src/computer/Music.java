@@ -8,7 +8,7 @@ public interface Music {
     void pauseMusic();
     void stopMusic();
 
-    default void sayHelloFromMusic(){
+    default void sayHello(){
         System.out.println("Hello from default method in MUSIC interface");
     }
 
