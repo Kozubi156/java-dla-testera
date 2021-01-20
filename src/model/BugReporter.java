@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class BugReporter {
 
     private String firstName;
@@ -42,5 +44,25 @@ public class BugReporter {
 
     }
 
+    @Override
+    public String toString() {
+        return "BugReporter{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BugReporter that = (BugReporter) o;
+        return Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, email);
+    }
 }

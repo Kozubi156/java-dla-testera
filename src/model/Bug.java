@@ -63,7 +63,7 @@ public class Bug {
     }
 
     public void showAllBugDetails() {
-        System.out.println("Bug description: " + bugDescription + ", bug reporter details: " + bugReporter.getLastName() + " " + bugReporter.getFirstName() + " " + bugReporter.getEmail() + " " + priority + " " + isActive);
+        System.out.println("Bug description: " + bugDescription + ", Bug reporter details: " + bugReporter.getFirstName() + " " + bugReporter.getLastName() + " " + bugReporter.getEmail() + ", priotiry: " + priority + ", Bug is active: " + isActive);
     }
 
     public void showBugReporterEmail() {
