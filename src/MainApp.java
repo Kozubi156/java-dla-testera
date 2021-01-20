@@ -10,7 +10,7 @@ public class MainApp {
 
         officeComputer.volumeUp(60);
         System.out.println(officeComputer.getVolumeLevel());
-        officeComputer.volumeUp(0);
+        officeComputer.volumeUp(99);
         System.out.println(officeComputer.getVolumeLevel());
 
 
