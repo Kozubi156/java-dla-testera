@@ -1,6 +1,10 @@
 import computer.Computer;
 import computer.Laptop;
 import computer.PC;
+import model.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
