@@ -10,17 +10,6 @@ public class MainApp {
 
 
 
-        gamingLaptop.volumeUp(50);
-        gamingLaptop.volumeUp(100);
-        gamingLaptop.volumeUp(100);
-        System.out.println(gamingLaptop.getVolumeLevel());
-
-        gamingLaptop.volumeDown(20);
-        gamingLaptop.volumeDown(20);
-        gamingLaptop.volumeDown(200);
-        gamingLaptop.volumeDown(200);
-
-
     }
 }
 

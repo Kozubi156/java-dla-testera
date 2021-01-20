@@ -9,7 +9,6 @@ abstract public class Computer {
     protected boolean isTurnOn;
     protected int volumeLevel;
 
-
     public Computer(String name, String type, int hdd, int ram) {
         this.name = name;
         this.type = type;
