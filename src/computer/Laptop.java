@@ -21,7 +21,7 @@ public class Laptop extends Computer {
 
     @Override
     public int volumeUp(int volume) {
-        if(volume > 0 && volume <= 100) {
+        if(volume > 0) {
             if (volumeLevel >= 100) {
                 volumeLevel = 100;
                 System.out.println("Max volume level 100 reached");
@@ -29,7 +29,7 @@ public class Laptop extends Computer {
                 volumeLevel += volume;
             }
         } else {
-            System.out.println("Wrong number, you can enter number form range 1-100");
+            System.out.println("Wrong number, only positive numbers are allowed");
         }
         return volumeLevel;
     }
@@ -48,11 +48,15 @@ public class Laptop extends Computer {
 
     @Override
     public int volumeDown(int volume) {
-        if (volumeLevel <= 0) {
-            volumeLevel = 0;
-            System.out.println("Volume level 0 reached");
+        if (volume > 0) {
+            if (volumeLevel <= 0) {
+                volumeLevel = 0;
+                System.out.println("Volume level 0 reached");
+            } else {
+                volumeLevel -= volume;
+            }
         } else {
-            volumeLevel -= volume;
+            System.out.println("Wrong number, only positive numbers are allowed");
         }
         return volumeLevel;
     }
