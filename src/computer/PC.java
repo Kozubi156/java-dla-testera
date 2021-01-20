@@ -4,7 +4,7 @@ public class PC extends Computer {
 
     private boolean isConnectedToPowerSupply;
 
-    public PC(String name, String type, int hdd, int ram, boolean isConnectedToPowerSupply) {
+    public PC(String name, String type, Hdd hdd, Ram ram, boolean isConnectedToPowerSupply) {
         super(name, type, hdd, ram);
         this.isConnectedToPowerSupply = isConnectedToPowerSupply;
     }
