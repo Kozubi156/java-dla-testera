@@ -73,11 +73,25 @@ abstract public class Computer {
     public abstract int volumeUp();
 
 
-    public abstract int volumeUp(int volume);
+    public int volumeUp(int newVolumeLevel) {
+        volumeLevel += newVolumeLevel;
+        if (volumeLevel >= 100) {
+            volumeLevel = 100;
+            System.out.println("Max volume level 100 reached");
+        }
+        return volumeLevel;
+    }
 
     public abstract int volumeDown();
 
-    public abstract int volumeDown(int volume);
+    public int volumeDown(int volumeValue) {
+        volumeLevel -= volumeValue;
+        if (volumeLevel >= 100) {
+            volumeLevel = 100;
+            System.out.println("Volume level 0 reached");
+        }
+        return volumeLevel;
+    }
 
     public boolean isTurnOn() {
         return isTurnOn;

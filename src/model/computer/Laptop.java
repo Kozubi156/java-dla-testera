@@ -18,16 +18,6 @@ public class Laptop extends Computer implements Music, Video {
         return volumeLevel;
     }
 
-    @Override
-    public int volumeUp(int newVolumeLevel) {
-            volumeLevel += newVolumeLevel;
-            if (volumeLevel >= 100) {
-                volumeLevel = 100;
-                System.out.println("Max volume level 100 reached");
-            }
-        return volumeLevel;
-    }
-
 
     @Override
     public int volumeDown() {
@@ -39,15 +29,6 @@ public class Laptop extends Computer implements Music, Video {
         return volumeLevel;
     }
 
-    @Override
-    public int volumeDown(int volumeValue) {
-            volumeLevel -= volumeValue;
-            if (volumeLevel >= 100) {
-                volumeLevel = 100;
-                System.out.println("Volume level 0 reached");
-            }
-        return volumeLevel;
-    }
 
     @Override
     public void switchOn() {
