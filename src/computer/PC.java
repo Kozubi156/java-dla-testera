@@ -14,7 +14,7 @@ public class PC extends Computer {
     }
 
     public int volumeUp() {
-        volumeLevel += 5;
+        volumeLevel += 2;
         if (volumeLevel >= 100) {
             volumeLevel = 100;
             System.out.println("Max volume level 100 reached");
@@ -24,22 +24,18 @@ public class PC extends Computer {
 
     @Override
     public int volumeUp(int newVolumeLevel) {
-        if (newVolumeLevel > 0) {
             volumeLevel += newVolumeLevel;
             if (volumeLevel >= 100) {
                 volumeLevel = 100;
                 System.out.println("Max volume level 100 reached");
             }
-        } else {
-            System.out.println("Wrong number, only positive numbers are allowed");
-        }
         return volumeLevel;
     }
 
 
     @Override
     public int volumeDown() {
-        volumeLevel -= 5;
+        volumeLevel -= 2;
         if (volumeLevel >= 100) {
             volumeLevel = 100;
             System.out.println("Volume level 0 reached");
@@ -49,15 +45,11 @@ public class PC extends Computer {
 
     @Override
     public int volumeDown(int volumeValue) {
-        if (volumeValue > 0) {
             volumeLevel -= volumeValue;
             if (volumeLevel >= 100) {
                 volumeLevel = 100;
                 System.out.println("Volume level 0 reached");
             }
-        } else {
-            System.out.println("Wrong number, only positive numbers are allowed");
-        }
         return volumeLevel;
     }
 
