@@ -3,13 +3,14 @@ package model;
 public class Bug {
 
     private String bugDescription;
-    private String email;
+    private BugReporter bugReporter;
     private int priority;
     private boolean isActive;
 
-    public Bug(String bugDescription, String email, int priority) {
+
+    public Bug(String bugDescription, BugReporter bugReporter, int priority) {
         this.bugDescription = bugDescription;
-        this.email = email;
+        this.bugReporter = bugReporter;
         this.priority = priority;
         this.isActive = true;
     }
@@ -26,30 +27,18 @@ public class Bug {
         }
     }
 
-    public String getEmail() {
-        return email;
+    public BugReporter getBugReporter() {
+        return bugReporter;
     }
 
-    public void setEmail(String email) {
-        if (!email.contains("@")) {
-            System.out.println("Wrong email address. Email address should contains @");
-        } else {
-            this.email = email;
-        }
-
+    public void setBugReporter(BugReporter bugReporter) {
+        this.bugReporter = bugReporter;
     }
 
     public int getPriority() {
         return priority;
     }
 
-//    public void setPriority(int priority) {
-//        if (priority >= 1 && priority <= 5) {
-//            this.priority = priority;
-//        } else {
-//            System.out.println("Wrong bug piority. Set bug piority from range 1 to 6");
-//        }
-//    }
 
     public void setPriority(int priority) {
         switch (priority) {
@@ -73,12 +62,12 @@ public class Bug {
         isActive = active;
     }
 
-    public void showBugDetails() {
-        System.out.println(bugDescription + " " + email + " " + priority + " " + isActive);
+    public void showAllBugDetails() {
+        System.out.println("Bug description: " + bugDescription + ", bug reporter details: " + bugReporter.getLastName() + " " + bugReporter.getFirstName() + " " + bugReporter.getEmail() + " " + priority + " " + isActive);
     }
 
     public void showBugReporterEmail() {
-        System.out.println("model.Bug reported email: " + email);
+        System.out.println("model.Bug reported email: " + bugReporter.getEmail());
     }
 
     public void showBugStatus() {
