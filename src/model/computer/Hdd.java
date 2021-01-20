@@ -1,13 +1,13 @@
-package computer;
+package model.computer;
 
 import java.util.Objects;
 
-public class Ram {
+public class Hdd {
 
     private String brand;
     private int size;
 
-    public Ram(String brand, int size) {
+    public Hdd(String brand, int size) {
         this.brand = brand;
         this.size = size;
     }
@@ -30,7 +30,7 @@ public class Ram {
 
     @Override
     public String toString() {
-        return "Ram{" +
+        return "Hdd{" +
                 "brand='" + brand + '\'' +
                 ", size=" + size +
                 '}';
@@ -40,8 +40,8 @@ public class Ram {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Ram ram = (Ram) o;
-        return size == ram.size && Objects.equals(brand, ram.brand);
+        Hdd hdd = (Hdd) o;
+        return size == hdd.size && Objects.equals(brand, hdd.brand);
     }
 
     @Override

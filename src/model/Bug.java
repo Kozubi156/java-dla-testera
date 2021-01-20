@@ -1,6 +1,6 @@
 package model;
 
-public class Bug {
+public class Bug implements ConsoleNotification {
 
     private String bugDescription;
     private BugReporter bugReporter;
@@ -54,12 +54,13 @@ public class Bug {
         }
     }
 
-    public boolean isActive() {
+    public boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(boolean active) {
-        isActive = active;
+    public void setBugStatus(boolean newStatus) {
+        isActive = newStatus;
+        notifyStatusChange();
     }
 
     public void showAllBugDetails() {
@@ -75,4 +76,18 @@ public class Bug {
     }
 
 
+    @Override
+    public void notifyStatusChange() {
+        System.out.println("Bug status was changed, is bug active: "+ isActive);
+    }
+
+    @Override
+    public String toString() {
+        return "Bug{" +
+                "bugDescription='" + bugDescription + '\'' +
+                ", bugReporter=" + bugReporter +
+                ", priority=" + priority +
+                ", isActive=" + isActive +
+                '}';
+    }
 }

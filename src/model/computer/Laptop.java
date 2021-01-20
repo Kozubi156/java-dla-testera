@@ -1,16 +1,12 @@
-package computer;
+package model.computer;
 
-public class PC extends Computer {
+public class Laptop extends Computer implements Music, Video {
 
-    private boolean isConnectedToPowerSupply;
+    private int batteryLevel;
 
-    public PC(String name, String type, Hdd hdd, Ram ram, boolean isConnectedToPowerSupply) {
+    public Laptop(String name, String type, Hdd hdd, Ram ram, int batteryLevel) {
         super(name, type, hdd, ram);
-        this.isConnectedToPowerSupply = isConnectedToPowerSupply;
-    }
-
-    public void showComputerName() {
-        System.out.println(name);
+        this.batteryLevel = batteryLevel;
     }
 
     public int volumeUp() {
@@ -45,7 +41,7 @@ public class PC extends Computer {
             volumeLevel = 0;
             System.out.println("Volume level 0 reached");
         } else {
-            volumeLevel -= 10;
+            volumeLevel -= 2;
         }
         return volumeLevel;
     }
@@ -66,27 +62,60 @@ public class PC extends Computer {
     }
 
 
-
-
-
     @Override
     public void switchOn() {
-        System.out.println("Checking power supply");
-        if (isConnectedToPowerSupply) {
+        System.out.println("Check battery level");
+        if (batteryLevel > 0) {
             super.switchOn();
         } else {
-            System.out.println("Coumputer is not connected to power suply");
+            System.out.println("Battery level to low");
         }
+
     }
 
     @Override
     public void switchOff() {
-        System.out.println("Wyłczam PC: "+ name);
+        System.out.println("Wyłczam laptop: " + name);
         isTurnOn = false;
     }
 
-    public void setPowerSupply(boolean powerSupplyAttached) {
-        isConnectedToPowerSupply = powerSupplyAttached;
+
+    public void setBatteryLevel(int newBatteryLevel) {
+        batteryLevel = newBatteryLevel;
     }
 
+    @Override
+    public void playMusic() {
+        System.out.println("PLAY MUSIC");
+    }
+
+    @Override
+    public void pauseMusic() {
+        System.out.println("PAUSE MUSIC");
+    }
+
+    @Override
+    public void stopMusic() {
+        System.out.println("STOP MUSIC");
+    }
+
+    @Override
+    public void sayHello() {
+        Music.super.sayHello();
+    }
+
+    @Override
+    public void playVideo() {
+        System.out.println("PLAY VIDEO");
+    }
+
+    @Override
+    public void pauseVideo() {
+        System.out.println("PAUSE VIDEO");
+    }
+
+    @Override
+    public void stopVideo() {
+        System.out.println("STOP VIDEO");
+    }
 }
