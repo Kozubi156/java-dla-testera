@@ -1,5 +1,6 @@
-import model.Bug;
-import model.BugReporter;
+import computer.Computer;
+import computer.Laptop;
+import computer.PC;
 
 public class MainApp {
     public static void main(String[] args) {
