@@ -9,7 +9,7 @@ public interface Music {
     void stopMusic();
 
     default void sayHelloFromMusic(){
-        System.out.println("Hello from music");
+        System.out.println("Hello from default method in MUSIC interface");
     }
 
     static String getName(){
