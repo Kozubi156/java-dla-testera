@@ -1,23 +1,19 @@
 import computer.Computer;
 import computer.Laptop;
 import computer.PC;
+import model.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
 
 
-        Laptop laptop = new Laptop("Laptop 1","Simple work laptop",1000,256,78);
+        User user1 = new User("Paweł", "Testowy", "testowy@gmail.com", 23);
+        User user2 = new User("Paweł", "Testowy", "testowy@gmail.com", 23);
 
-
-        laptop.playMusic();
-        laptop.pauseMusic();
-        laptop.stopMusic();
-
-        laptop.sayHelloFromMusic();
-
-        laptop.pauseVideo();
-        laptop.pauseVideo();
-        laptop.sayHelloFromVideo();
+        System.out.println(user1.equals(user2));
 
 
 

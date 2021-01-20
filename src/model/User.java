@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class User {
 
     private static int userCounter = 0;
@@ -55,35 +57,59 @@ public class User {
         isAdult = adult;
     }
 
-    public void showAllUserInformation(){
-        System.out.println(firstName+" "+lastName+", email: "+email+", ma lat: "+age+", czy jest dorosły: "+isAdult);
+    public void showAllUserInformation() {
+        System.out.println(firstName + " " + lastName + ", email: " + email + ", ma lat: " + age + ", czy jest dorosły: " + isAdult);
     }
 
-    public int getUserAge(){
+    public int getUserAge() {
         return age;
     }
 
-    public boolean isAdult(){
+    public boolean isAdult() {
         return age >= 18;
     }
 
-    public void greetings(String firstName){
-        System.out.println("Hi "+firstName);
+    public void greetings(String firstName) {
+        System.out.println("Hi " + firstName);
     }
 
-    public void greetings(String firstName,String lastName){
-        System.out.println("Hi "+firstName+" "+lastName);
+    public void greetings(String firstName, String lastName) {
+        System.out.println("Hi " + firstName + " " + lastName);
     }
 
-    public void greetings(String firstName,String lastName, int age){
-        System.out.println("Hi "+firstName+" "+lastName);
+    public void greetings(String firstName, String lastName, int age) {
+        System.out.println("Hi " + firstName + " " + lastName);
     }
 
-    public static void printUserCounter(){
+    public static void printUserCounter() {
         System.out.println(userCounter);
     }
 
-    public static int getUserCounter(){
+    public static int getUserCounter() {
         return userCounter;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", isAdult=" + isAdult +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return age == user.age && isAdult == user.isAdult && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, email, age, isAdult);
     }
 }
