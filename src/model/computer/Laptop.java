@@ -11,21 +11,15 @@ public class Laptop extends Computer implements Music, Video {
 
     public int volumeUp() {
         volumeLevel += 5;
-        if (volumeLevel >= 100) {
-            volumeLevel = 100;
-            System.out.println("Max volume level 100 reached");
-        }
+        maxVolumeLevel();
         return volumeLevel;
     }
 
 
     @Override
     public int volumeDown() {
-        volumeLevel -= 5;
-        if (volumeLevel >= 100) {
-            volumeLevel = 100;
-            System.out.println("Volume level 0 reached");
-        }
+        volumeLevel -= 2;
+        minVolumeLevel();
         return volumeLevel;
     }
 

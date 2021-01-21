@@ -15,10 +15,7 @@ public class PC extends Computer {
 
     public int volumeUp() {
         volumeLevel += 2;
-        if (volumeLevel >= 100) {
-            volumeLevel = 100;
-            System.out.println("Max volume level 100 reached");
-        }
+        maxVolumeLevel();
         return volumeLevel;
     }
 
@@ -26,10 +23,7 @@ public class PC extends Computer {
     @Override
     public int volumeDown() {
         volumeLevel -= 2;
-        if (volumeLevel >= 100) {
-            volumeLevel = 100;
-            System.out.println("Volume level 0 reached");
-        }
+        minVolumeLevel();
         return volumeLevel;
     }
 
