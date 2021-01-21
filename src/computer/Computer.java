@@ -74,7 +74,13 @@ abstract public class Computer {
 
 
     public int volumeUp(int newVolumeLevel) {
+        checkIfNumberIsPositive(newVolumeLevel);
         volumeLevel += newVolumeLevel;
+        maxVolumeLevel();
+        return volumeLevel;
+    }
+
+    public int maxVolumeLevel() {
         if (volumeLevel >= 100) {
             volumeLevel = 100;
             System.out.println("Max volume level 100 reached");
@@ -84,14 +90,31 @@ abstract public class Computer {
 
     public abstract int volumeDown();
 
-    public int volumeDown(int volumeValue) {
-        volumeLevel -= volumeValue;
-        if (volumeLevel >= 100) {
-            volumeLevel = 100;
-            System.out.println("Volume level 0 reached");
+    public int volumeDown(int newVolumeLevel) {
+        checkIfNumberIsPositive(newVolumeLevel);
+        volumeLevel -= newVolumeLevel;
+        minVolumeLevel();
+        return volumeLevel;
+    }
+
+    private int checkIfNumberIsPositive(int newVolumeLevel) {
+        if(newVolumeLevel<=0){
+            System.out.println("Number is not positive");
+        } else {
+            return newVolumeLevel;
+        }
+        return newVolumeLevel;
+    }
+
+
+    public int minVolumeLevel() {
+        if (volumeLevel <= 0) {
+            volumeLevel = 0;
+            System.out.println("Min volume level 0 reached");
         }
         return volumeLevel;
     }
+
 
     public boolean isTurnOn() {
         return isTurnOn;
