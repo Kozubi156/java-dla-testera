@@ -1,10 +1,5 @@
-import computer.Computer;
-import computer.Laptop;
-import computer.PC;
-import model.User;
-
-import java.util.ArrayList;
-import java.util.List;
+import model.Bug;
+import model.BugReporter;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -14,6 +9,9 @@ public class MainApp {
         System.out.println(bug1.getBugReporter());
         System.out.println(bug1.getIsActive());
         bug1.setBugStatus(false);
+
+
+
 
     }
 }
