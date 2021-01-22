@@ -1,3 +1,4 @@
+import model.Bug;
 import model.User;
 
 import java.util.*;
@@ -5,13 +6,9 @@ import java.util.*;
 public class MainApp {
     public static void main(String[] args) {
 
-        List<String> names1 = new ArrayList<>();
-        List<String> names2 = new LinkedList<>();
+        List<Bug> bugs = new ArrayList<>();
 
-        names1.add("Bolo");
-        names2.add("Genek");
-
-
+        bugs.add(new Bug("bug","Roman","5",true));
 
 
 

@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable<User> {
 
     private static int userCounter = 0;
 
@@ -19,6 +19,14 @@ public class User {
         this.age = age;
         this.isAdult = isAdult();
         userCounter++;
+    }
+
+    public static void printUserCounter() {
+        System.out.println(userCounter);
+    }
+
+    public static int getUserCounter() {
+        return userCounter;
     }
 
     public String getFirstName() {
@@ -53,10 +61,6 @@ public class User {
         this.age = age;
     }
 
-    public void setAdult(boolean adult) {
-        isAdult = adult;
-    }
-
     public void showAllUserInformation() {
         System.out.println(firstName + " " + lastName + ", email: " + email + ", ma lat: " + age + ", czy jest dorosły: " + isAdult);
     }
@@ -69,6 +73,10 @@ public class User {
         return age >= 18;
     }
 
+    public void setAdult(boolean adult) {
+        isAdult = adult;
+    }
+
     public void greetings(String firstName) {
         System.out.println("Hi " + firstName);
     }
@@ -79,14 +87,6 @@ public class User {
 
     public void greetings(String firstName, String lastName, int age) {
         System.out.println("Hi " + firstName + " " + lastName);
-    }
-
-    public static void printUserCounter() {
-        System.out.println(userCounter);
-    }
-
-    public static int getUserCounter() {
-        return userCounter;
     }
 
     @Override
@@ -111,5 +111,14 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, email, age, isAdult);
+    }
+
+    @Override
+    public int compareTo(User user) {
+        int compareResult = this.getFirstName().compareTo(user.getFirstName());
+        if (compareResult == 0) {
+            compareResult = this.getLastName().compareTo(user.getLastName());
+        }
+        return compareResult;
     }
 }
