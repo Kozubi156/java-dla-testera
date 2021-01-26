@@ -1,69 +1,60 @@
-import model.User;
+import model.computer.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MainApp {
     public static void main(String[] args) {
 
-        List<User> users = new ArrayList<>();
+        List<Computer> computers = new ArrayList<>();
+        computers.add(new Laptop("MB PRO 1","PRO 1", new Hdd("HP",500), new Ram("HP", 128),100));
+        computers.add(new Laptop("MB PRO 2","PRO 2", new Hdd("HP",500), new Ram("HP", 128),100));
+        computers.add(new Laptop("MB PRO 3","PRO 3", new Hdd("HP",256), new Ram("HP", 128),100));
+        computers.add(new Laptop("MB PRO 4","PRO 4", new Hdd("HP",500), new Ram("HP", 128),100));
+        computers.add(new PC("PC 1","BBB",new Hdd("HP",500), new Ram("HP", 128),true));
+        computers.add(new PC("PC 1","AAA",new Hdd("HP",256), new Ram("HP", 256),true));
+        computers.add(new PC("PC 2","PRO 3",new Hdd("HP",500), new Ram("HP", 128),true));
 
-        users.add(new User("Janusz", "Filipiak", "filipak@gmail.com", 11));
-        users.add(new User("Janusz", "Ananas", "filipak@gmail.com", 67));
-        users.add(new User("Genek", "Testowy", "testowy@gmail.com", 13));
-        users.add(new User("Marcin", "Wisia", "wisnia@gmail.com", 43));
-        users.add(new User("Mateusz", "Vatowski", "vatowski@gmail.com", 11));
-        users.add(new User("Krzysztof", "Dombrowski", "dombrowski@gmail.com", 90));
-        users.add(new User("Janusz", "Filipiak", "janusz@gmail.com", 65));
+        //1. Zliczyc wszystkie komputery, które maja wiecej niż 128 gb ramu
+        long countByRamSize = computers.stream()
+                .filter(computer -> computer.getRam().getSize() > 128)
+                .count();
+        System.out.println(countByRamSize);
 
-//        Optional<User> max = users.stream()
-//                .max(Comparator.comparingInt(User::getUserAge));
-//
-//
-//        if(max.isPresent()){
-//            System.out.println(max.get());
-//        } else {
-//            System.out.println("nie znalazłem takiego elemtnu");
-//        }
+        //2. Wyswietlic na konsole wszystkie typy komputerów - map
+        List<String> computersType = computers.stream()
+                .map(Computer::getType)
+                .collect(Collectors.toList());
+        System.out.println(computersType);
 
-//        String nameMarcin = users.stream()
-//                .map(User::getFirstName)
-//                .filter(name -> name.equals("Marcin"))
-//                .findFirst()
-//                .orElse("Nie ma Marcina na liscie");
-//
-//        System.out.println(nameMarcin);
-//
-//        Integer age = users.stream()
-//                .map(User::getAge)
-//                .max(Integer::compareTo)
-//                .orElse(-1);
-//
-//
-//        System.out.println(age);
+        //3. Wyswietlic komputer ktory ma najwiecej ramu
 
-//        User Bartek = users.stream()
-//                .filter(name -> name.getFirstName().startsWith("B"))
-//                .findFirst()
-//                .orElseGet(() -> new User("Bartek", "Testowy", "testowy@gmail.com", 45));
-//
-//        System.out.println(Bartek);
+        Optional<Computer> maxRam = computers.stream()
+                .max(Comparator.comparingInt(computer -> computer.getRam().getSize()));
 
-//        User Bartek = users.stream()
-//                .filter(name -> name.getFirstName().startsWith("B"))
-//                .findFirst()
-//                .orElseThrow(() -> new IllegalStateException("Na liscie nie ma usera któremu imie zaczyna sie na B"));
+        if(maxRam.isPresent()){
+            System.out.println(maxRam.get());
+        } else {
+            System.out.println("Cannot find such element");
+        }
 
-//        users.stream()
-//                .filter(name -> name.getFirstName().startsWith("J"))
-//                .findFirst()
-//                .ifPresent(user -> System.out.println(user));
+        //4 Utworzyc nowa kolekcje z komuputerami, które maja dysk twardy mniejszy niż 500gb
 
+        List<Computer> computersByHddSize = computers.stream()
+                .filter(computer -> computer.getHdd().getSize() < 500)
+                .collect(Collectors.toList());
 
-        users.stream()
-                .filter(name -> name.getFirstName().startsWith("Z"))
-                .findFirst()
-                .ifPresentOrElse(user -> System.out.println(user), () -> System.out.println("Nie ma takiego usera"));
+        System.out.println(computersByHddSize);
+
+        //5. Posortowac komutery po nazwie i typie
+
+        List<Computer> sortedComputers = computers.stream()
+                .sorted(Comparator.comparing(Computer::getName).thenComparing(Computer::getType))
+                .collect(Collectors.toList());
+
+        System.out.println(sortedComputers);
+
 
     }
 }
