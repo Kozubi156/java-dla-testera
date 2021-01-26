@@ -1,9 +1,12 @@
+package optional;
+
 import model.User;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainApp {
+public class OptionalDemo {
+
     public static void main(String[] args) {
 
         List<User> users = new ArrayList<>();
@@ -67,4 +70,3 @@ public class MainApp {
 
     }
 }
-
