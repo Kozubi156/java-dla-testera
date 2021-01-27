@@ -31,14 +31,12 @@ public class MainApp {
         System.out.println(computersType);
 
         //3. Wyswietlic komputer ktory ma najwiecej ramu
-        Optional<Computer> maxRam = computers.stream()
-                .max(Comparator.comparingInt(computer -> computer.getRam().getSize()));
+        Computer maxRam = computers.stream()
+                .max(Comparator.comparingInt(computer -> computer.getRam().getSize()))
+                .orElseThrow(() -> new IllegalStateException("Can not find any computer"));
 
-        if (maxRam.isPresent()) {
-            System.out.println(maxRam.get());
-        } else {
-            System.out.println("Cannot find such element");
-        }
+        System.out.println(maxRam);
+
 
         //4 Utworzyc nowa kolekcje z komuputerami, które maja dysk twardy mniejszy niż 500gb
         List<Computer> computersByHddSize = computers.stream()
@@ -59,6 +57,16 @@ public class MainApp {
         //get() jest użyty w poleceniu nr 3
 
         //isPresent jest użyty w poleceniu nr 3
+
+        Optional<Computer> maxHdd = computers.stream()
+                .max(Comparator.comparingInt(computer -> computer.getHdd().getSize()));
+
+        if (maxHdd.isPresent()) {
+            System.out.println(maxHdd.get());
+        } else {
+            System.out.println("Cannot find such element");
+        }
+
 
         //isEmpty
         Optional<Computer> minRam = computers.stream()
@@ -91,21 +99,20 @@ public class MainApp {
         computers.stream()
                 .filter(computer -> computer.getName().equals("PC 19"))
                 .findFirst()
-                .orElseThrow(()-> new IllegalStateException("Computer name is not available on the list"));
+                .orElseThrow(() -> new IllegalStateException("Computer name is not available on the list"));
 
         //ifPresent
         computers.stream()
                 .filter(computer -> computer.getName().equals("MB PRO 1"))
                 .findFirst()
-                .ifPresent(computer -> System.out.println(computer));
+                .ifPresent(System.out::println);
 
         //ifPresentOrElse
         computers.stream()
                 .filter(computer -> computer.getName().equals("MB PRO 1878787"))
                 .findFirst()
-                .ifPresentOrElse(computer -> System.out.println(computer),()-> System.out.println("Comupter name " +
+                .ifPresentOrElse(System.out::println, () -> System.out.println("Comupter name " +
                         "doesn't exist"));
-
 
 
     }
