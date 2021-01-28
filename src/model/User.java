@@ -1,5 +1,5 @@
 package model;
-
+import enums.Gender;
 import exceptions.IllegalEmailFormatException;
 
 import java.util.Objects;
@@ -13,6 +13,7 @@ public class User {
     private String email;
     private int age;
     private boolean isAdult;
+    private Gender gender;
 
     public User(String firstName, String lastName, String email, int age) {
         this.firstName = firstName;
@@ -22,6 +23,18 @@ public class User {
         this.isAdult = isAdult();
         userCounter++;
     }
+
+    public User(String firstName, String lastName, String email, int age, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
+        this.isAdult = isAdult();
+        userCounter++;
+    }
+
+
 
     public String getFirstName() {
         return firstName;
@@ -64,11 +77,21 @@ public class User {
     }
 
     public void showAllUserInformation() {
-        System.out.println(firstName + " " + lastName + ", email: " + email + ", ma lat: " + age + ", czy jest dorosły: " + isAdult);
+        System.out.println(firstName + " " + lastName + ", email: " + email + ", ma lat: " + age + ", czy jest " +
+                "dorosły: " + isAdult + ", płeć: "+ gender.getGender() );
     }
 
     public int getUserAge() {
         return age;
+    }
+
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public boolean isAdult() {

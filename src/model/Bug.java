@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.IllegaBugPiorityException;
+
 public class Bug implements ConsoleNotification {
 
     private String bugDescription;
@@ -40,7 +42,7 @@ public class Bug implements ConsoleNotification {
     }
 
 
-    public void setPriority(int priority) {
+    public void setPriority(int priority) throws IllegaBugPiorityException{
         switch (priority) {
             case 1:
             case 2:
@@ -50,7 +52,7 @@ public class Bug implements ConsoleNotification {
                 this.priority = priority;
                 break;
             default:
-                System.out.println("Wrong bug piority. Set bug piority from range 1 to 6");
+                throw new IllegaBugPiorityException("Wrong bug piority. Set bug piority from range 1 to 6");
         }
     }
 
