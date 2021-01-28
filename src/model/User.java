@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.IllegalEmailFormatException;
+
 import java.util.Objects;
 
 public class User {
@@ -41,8 +43,12 @@ public class User {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws IllegalEmailFormatException{
+        if (!email.contains("@")) {
+            throw new IllegalEmailFormatException("Wrong email address. Email address should contains @");
+        } else {
+            this.email = email;
+        }
     }
 
     public int getAge() {
